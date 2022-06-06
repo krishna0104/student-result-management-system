@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         html{
+        height: 100%;
+    }
+    body{
+        height: 100%;
+        margin:0;
+    }
+    .form1{
+        display: flex;
+        flex-direction: column;
+        line-height: 25px;
+        font-size: 20px;
+    }
+    .form1 form{
+        display: flex;
+        flex-direction: column;
+    }
+    .additional{
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .form1 input {
+    display:inline-flex;
+    width: 100%;
+    padding: 7px 2px;
+    margin-bottom: 7px;
+    border-bottom: 1px solid gray;
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid rgb(145, 139, 139);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+}
+.submit {
+    width: 60%;
+    height: 35px;
+    background-color: #f35588;
+    border: 1px solid #f35588;
+    margin-top: 10px;
+    margin-left: 60px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.submit:hover{
+    background-color:rgb(26, 204, 26);
+}
+    </style>
+</head>
+<body>
+    <%- include("navbar_temp2.ejs") -%>
+    <div class="additional">
+        <%- include("menu.ejs") -%> 
+    <div class="form1">
+    <h1>Add Subjects</h1>
+    <div>
+        <label >class : </label> <%= classNum %> 
+    </div>
+    <div>
+        <label >section : </label> <%= section %> 
+    </div>
+    <form action="/admin/editclass2" method="post">
+        <% for(let i=0;i<subjects.length;i++){ %>
+            <label><%= subjects[i] %> </label>
+            <input type="text" name="subjects" placeholder="change name">
+        <% } %>  
+        <% let a = classNum+"-"+section %> 
+        <button type="submit" name="btn" class="submit" value=<%= a %> >save changes</button>
+</form>
+</div> 
+   
+<div>   
+</body>
+</html>

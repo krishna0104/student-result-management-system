@@ -1,0 +1,76 @@
+<style>
+.maincon{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height:100%;
+    
+}
+.menu{
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width:300px;
+    padding:20px 50px;
+}
+.menu button{
+    font-size: 16px;
+    height: 50px;
+    width:300px;
+    border-radius: 2px;
+    border:1px solid rgb(154, 148, 148);
+    background-image:linear-gradient(90deg,rgb(250, 240, 242),rgb(238, 231, 233));
+
+}
+.menu button:hover {
+    background-image:linear-gradient(90deg,rgb(238, 231, 233),rgb(250, 240, 242));
+      color: black;
+    }
+.menu form{
+    margin-block-end: 0px;
+} 
+</style>
+<div class="maincon">
+    <div class="menu">
+        <form action="/admin/createclass" method="post">
+            <button type="submit">create class</button>
+        </form>
+        <form action="/admin/editclass" method="post">
+            <button type="submit">edit class</button>
+        </form>
+        <form action="/admin/deleteclass" method="post">
+            <button type="submit">delete class</button>
+        </form>
+        <form action="/admin/createstudent" method="post">
+            <button type="submit">create student</button>
+        </form>
+        <form action="/admin/editstudent" method="post">
+            <button type="submit">edit student</button>
+        </form>
+        <form action="/admin/deletestudent" method="post">
+            <button type="submit">delete student</button>
+        </form>
+        <form action="/admin/createnotice" method="post">
+            <button type="submit">create notice</button>
+        </form>
+        <form action="/admin/editnotice" method="post">
+            <button type="submit">edit notice</button>
+        </form>
+        <form action="/admin/deletenotice" method="post">
+            <button type="submit">delete notice</button>
+        </form>
+        <form action="/admin/changepassword" method="post">
+            <button type="submit">change password</button>
+        </form>
+        <form action="/admin/showclasses" method="post">
+            <button type="submit">Show Classes</button>
+        </form>
+        <form action="/admin/showstudents" method="post">
+            <button type="submit">Show Students</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<html>
+<head>
+<style>
+    html{
+        overflow:hidden;
+    }
+    body{
+        margin:0;
+    }
+.button{
+padding:15px 60px;
+font-size:15px;
+width:400px;
+height: 70px;
+color:rgb(118, 79, 169);
+background-color:lightblue;
+border:none;
+transition-duration:0.5s;
+border-radius:8px;
+box-shadow:0.5px gray;
+}
+.divcolumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    margin-right:150px ;
+    margin-bottom: 100px;
+}
+.divrow{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:10px;
+    width:880px;
+
+}
+.maincon{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height:100%;
+    
+}
+</style>
+</head>
+<body>
+<%- include("navbar_temp2.ejs") -%>
+<div class="maincon">
+    <%- include("menu.ejs") -%> 
+<div class="divcolumn">
+        <h1>Dashboard</h1></p><hr>
+        <div class="divrow">
+        <button class="button button1">Regd Classes : <%= classes %>  </button>
+        <button class="button button2">Regd Students : <%= students %>  </button>
+        </div>
+        <div class="divrow">
+        <button class="button button3">No of Notices : <%= notices %>  </button>
+        <button class="button button4">Results Declared : Declared </button>
+        </div>
+</div>
+</div>
+</body>
+</html>

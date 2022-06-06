@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRM-Home</title>
+    <style>
+        body{ background-image:linear-gradient(90deg,rgb(238, 231, 233),rgb(250, 240, 242));;
+            display: flex;
+            flex-direction: column;
+            justify-content:flex-start;
+            align-items: center;
+            margin:0;
+        }
+        .noticebar{
+            background-color: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top:3vh;
+            width: fit-content;
+            border-radius: 5px;
+            margin-bottom: 2vh;
+        }
+        .notices{
+            font-size: 20px;
+            width:900px;
+            font-style:italic;
+            color: rgb(255, 255, 255);
+
+        }
+        img{
+            margin-top: 40px;
+            width:80%;
+            height: 80%;
+            position: fixed;
+            top:60px;
+        }
+    </style>
+</head>
+<body>
+    <%- include("navbar_temp") -%>
+    <img height=" 500px" width=" 100%" src="/images/background2.jpg">
+    <div class="noticebar">  
+        <h1>Notice</h1>
+        <ul>
+        <% for(let i=0;i<notice.length;i++){ %>
+            <div class="notices"><li><marquee direction="left"><%=notice[i].body%></marquee></li></div>
+        <% } %>  
+    </ul>   
+    </div>
+</body>
+</html>

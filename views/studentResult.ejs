@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                 html{
+       height: 100%;
+   }
+   body{
+    background-image:linear-gradient(90deg,rgb(250, 240, 242),rgb(238, 231, 233));
+       
+       height: 100%;
+       margin:0;
+   }
+   .form1{
+       display: flex;
+      flex-direction: column;
+       line-height: 35px;
+       font-size: 22px;
+       width:600px;
+       border-radius: 5px;
+       margin-left: 250px;
+       margin-top: 75px;
+   
+   }
+   .form1 form{
+       display: flex;
+       flex-direction: column;
+   }
+   .additional{
+       display: flex;
+       height: 100%;
+       justify-content: center;
+       align-items: flex-start;
+       position: relative;
+   }
+   .form1 input {
+   display:inline-flex;
+   width: 100%;
+   padding: 7px 0px;
+   margin-bottom: 7px;
+   border-bottom: 1px solid gray;
+   background: rgba(0, 0, 0, 0.05);
+   color: #000;
+   font-size: 16px;
+   border-radius: 10px;
+   border: 1px solid rgb(145, 139, 139);
+   padding-left: 20px;
+   padding-right: 20px;
+   font-size: 16px;
+}
+.submit {
+   width: 50%;
+   height: 35px;
+   background-color: #f35588;
+   border: 1px solid #f35588;
+   margin-top: 10px;
+   color: white;
+   font-weight: 500;
+   font-size: 15px;
+   font-weight: bold;
+   border-radius: 50px;
+   cursor: pointer;
+}
+.submit:hover{
+   background-color:rgb(26, 204, 26);
+}
+.form1 p{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+    </style>
+</head>
+<body>
+    <%- include("navbar_temp.ejs") -%>
+    <div class="additional">
+        <div class="form1">
+            <h2>Student Result  </h2>  
+        <div style="display:flex;">
+            <p> class : <%= classNum %>   ::    section : <%= section %>    ::     rollNo :  <%= rollNo %> </p> 
+            <input style="z-index:-1;height:0;width:0;border:0;background:none" name="class" value=<%= classNum %> >
+            <input style="z-index:-1;height:0;width:0;border:0;background:none" name="section" value=<%= section %> > 
+            <input style="z-index:-1;height:0;width:0;border:0;background:none" name="rollNo" value=<%= rollNo %> >
+      </div>
+        <div style="margin-right:200px">
+            <p>First Name :  <%= firstname %> </p>
+            <p>Last Name :  <%= lastname %></p>
+        </div>
+        <div style="width:200px">
+        <h2>Marks</h2>
+        <% for(let i=0;i<subjects.length;i++){ %> 
+            <div>
+                <label><%= subjects[i] %> : </label> <%= marks[i] %> 
+
+            </div>
+        <% } let flag=0;per=0;%>
+        <% for(let k=0;k<marks.length;k++){ %> 
+            <% if(Number(marks[k])<54){ %>
+                <% flag=1;break ;%>
+            <% }else{ %>
+                <%per=Number(marks[k])+per %>
+            <% }} %> 
+            <% if(flag==1){ %> 
+                <div style="color:red">
+                    <label style="color:blue">Percentage : </label> -- 
+                </div >
+                <div style="color:red">
+                    <label style="color:blue">Result : </label> Fail 
+                </div>
+            <%}else{ per=per/marks.length %>
+                <div style="color:green">
+                    <label style="color:blue">Percentage : </label><%=per%> 
+                </div>
+                <div style="color:green">
+                    <label style="color:blue">Result : </label> Pass 
+                </div>
+            <% } %>        
+    </div>  
+    <form action="/">   
+        <button type="submit" name="btn" class="submit" >Home</button>    
+    </form>
+</div>
+</div>
+</body>
+</html>

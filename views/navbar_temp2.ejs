@@ -1,0 +1,55 @@
+<style>
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+      display: flex;
+      padding:10px 0px;
+      width:100%;
+      justify-content: space-around;
+      align-items: center;
+      position: fixed;
+      z-index: 1;
+    }
+    .topnav button {
+      float: left;
+      color: #090909;
+      border: 2px;
+      text-align: center;
+      padding: 10px 25px;
+      text-decoration: none;
+      font-size: 17px;
+      background-image:linear-gradient(90deg,rgb(250, 240, 242),rgb(238, 231, 233))
+    }
+    .topnav form{
+        margin-block-end: 0px;
+    }
+    .topnav button:hover {
+      background-image:linear-gradient(90deg,rgb(238, 231, 233),rgb(250, 240, 242));
+      color: black;
+    }
+    .heading{
+      margin-left:15vw;
+      margin-right: 20vw;
+      color: antiquewhite;
+      font-size: 20px;
+    }
+    .divScroll{
+    width:5px;
+    height:10px;
+    overflow:scroll;
+    }
+    body{
+      background-image: linear-gradient(90deg,rgb(250, 240, 242),rgb(238, 231, 233));
+    }
+    </style>
+    <div class="topnav">
+        <form action="/admin" method="post">
+            <button type="submit">Home</button>
+        </form>
+        <div class="heading">Student Result Management System - Admin</div>
+        <form action="/" method="get">
+            <button type="submit">Log Out</button>
+        </form>
+    </div>
+      
+    </div><div class="divScroll"></div>

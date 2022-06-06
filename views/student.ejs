@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT RESULT</title>
+    <style>
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", Arial, sans-serif;
+}
+html{
+    height:100%;
+}
+body {
+    background-color: #e5e5e5;
+    height: 90%;
+    width: 100%;
+    
+}
+
+.login {
+    width: 900px;
+    height: 550px;
+    margin: 115px auto;
+    position: relative;
+    bottom:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parentlogin {
+    width: 35%;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding:60px 80px;
+    position: relative;
+    background-color: white;
+}
+
+.parentdesc {
+    background-color: #f75959;
+    text-align: center !important;
+}
+
+
+.title {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.title h1 {
+    width: 100%;
+}
+
+.title .icon {
+    width: 75%;
+    display: flex;
+}
+
+.title .icon .social {
+    position: relative;
+    width: 32%;
+    justify-content: flex-end !important;
+}
+
+.title .icon .social .social-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.title .icon .social .social-icon:hover {
+    color: #f75959;
+}
+
+form h1 {
+    margin-bottom: 45px;
+}
+
+.label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 7px 2px;
+    margin-bottom: 7px;
+    border-bottom: 1px solid gray;
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+.submit {
+    width: 100%;
+    height: 35px;
+    background-color: #f35588;
+    border: 1px solid #f35588;
+    margin-top: 25px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.submit:hover{
+    background-color:rgb(26, 204, 26);
+}
+
+.extra {
+    position: relative;
+    display: flex;
+}
+#cars{
+    width: 50px;
+    text-align: center;
+}
+
+    </style>
+    
+</head>
+<body>
+    <%- include("navbar_temp") -%>
+      <div class="login">
+            <div class="parentlogin">
+                <form action="/student" method="post"> 
+                    <div class="title">
+                        <h1>Student Result</h1>
+                        </div>
+                   
+                    <label for="class">Enter Your Class:</label>
+
+<select id="cars" name="class">
+  <option value="--">--</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+</select>
+<br><br>
+<label for="class">Choose your section:</label>
+
+<select id="cars" name="section">
+  <option value="--">--</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+<br><br>
+ <label class="label" for="password">Roll No</label>
+ <input type="text" class="roll" name="rollNo" placeholder=" Enter your Roll No" >
+
+
+                    <label class="label" for="password">Password</label>
+                    <input type="password" name="password" placeholder="Password">
+                    <input type="submit" class="submit" value="Submit" >
+                    <button></button>
+                   
+                </form>
+            </div>
+     </div>
+
+   
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <style>
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Lato", Arial, sans-serif;
+}
+html{
+    height: 100%;
+}
+body {
+    background-color: #e5e5e5;
+    height: 100%;
+    width:100%;
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parentlogin {
+    width: 500px;
+    height: 525px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.parentdesc {
+    background-color: #f75959;
+    text-align: center !important;
+}
+
+.parentlogin {
+    background-color: white;
+}
+
+form {
+    width: 350px;
+    height: 250px;
+    display: block;
+    position: absolute;
+    margin: 50%;
+    top: -125px;
+    left: -175px;
+}
+
+.title {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.title h1 {
+    width: 100%;
+}
+
+.title .icon {
+    width: 75%;
+    display: flex;
+}
+
+.title .icon .social {
+    position: relative;
+    width: 32%;
+    justify-content: flex-end !important;
+}
+
+.title .icon .social .social-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.title .icon .social .social-icon:hover {
+    color: #f75959;
+}
+
+form h1 {
+    margin-bottom: 45px;
+}
+
+.label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 7px 2px;
+    margin-bottom: 7px;
+    border-bottom: 1px solid gray;
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+.submit {
+    width: 100%;
+    height: 35px;
+    background-color: #f35588;
+    border: 1px solid #f35588;
+    margin-top: 25px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+}
+.submit :hover{
+    background-color: black;
+}
+
+.extra {
+    position: relative;
+    display: flex;
+}
+
+.checkbox {
+    text-align: left;
+    width: 50%;
+}
+.checkbox :hover
+
+
+.checkbox label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #f35588;
+}
+
+.checkbox input {
+    position: absolute;
+    cursor: pointer;
+    left: -70px;
+    top: 4px;
+    background-color: #f35588;
+}
+
+.for a {
+    text-decoration: none;
+    color: #f35588;
+}
+    </style>
+    
+</head>
+<body>
+    <%- include("navbar_temp") -%>
+      <div class="login">
+            <div class="parentlogin">
+                <form action="/admin" method="post"> 
+                    <div class="title">
+                        <h1>Login</h1>
+                        </div>
+                    <label class="label" >Username</label>
+                    <input type="text" name="username" placeholder="username">
+                    <label class="label" >Password</label>
+                    <input type="password" name="password" placeholder="password">
+                    <button type="submit" class="submit"  >Sign In</button>
+                   
+                </form>
+            
+           
+        </div>
+
+     </div>
+
+   
+</body>
+</html>

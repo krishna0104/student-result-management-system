@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  height: fit-content;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+        html{
+            height: 100%;
+        }   
+        body{
+            height: 100%;
+            margin:0px;
+        }
+                #cars{
+                    width: 50px;
+                    text-align: center;
+                }
+                .submit {
+                    height: 35px;
+                    border: 1px solid #f35588;
+                    margin-top: 25px;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 15px;
+                    font-weight: bold;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    background-color: #f35588;
+                    width: 100%;
+                }
+                .submit:hover{
+                     background-color:rgb(26, 204, 26);
+                }
+                .parentlogin {
+            width: auto;
+            height: 550px;
+            position: relative;
+            float: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:10px 5px;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .login {
+            width: 100%;
+            height: 100%;
+            position:relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form1{
+            height:100%;
+            width:500px;
+            margin-right: 0;
+            margin-bottom: 100px;
+        }
+        .additional{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height:100%;
+        }
+        .con1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 320px;
+        }
+            </style>
+</head>
+<body>
+    <%- include("navbar_temp2.ejs") -%>
+    <div class="additional">
+        <%- include("menu.ejs") -%>
+        <div class="con1">
+    <form action="/admin/showstudents" method="post" class="form1">
+        <div class="login">
+            <div class="parentlogin">
+                <div class="title">
+                    <h1>Select Class</h1>
+                    </div>
+        <div>
+            <label> Class : </label>
+            <select id="cars" name="class"value="--">
+                <option value=<%= classNum %>><%= classNum %></option>
+                <%  for(let i =1;i<=10;i++){ %>
+                    <option value = <%=i%> ><%=i%></option>
+                <% } %>     
+            </select>
+        </div>
+        <div>
+            <label> Section : </label>
+            <select id="cars" name="section"value="--">
+                <option value=<%= section %>><%= section %> </option>
+                <%  for(let i =1;i<=4;i++){ %>
+                    <option value = <%=i%> ><%=i%></option>
+                <% } %>     
+            </select>
+        </div>
+        <button type="submit" class="submit">Show Students</button>
+    </div>
+</div>
+</form>
+    <table>
+        <% if(students.length!=0){ %> 
+        <tr>
+          <th>S No.</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>percentage</th>
+          <th>Result</th>
+        </tr>
+        <% } %> 
+        <%for(let i=0;i<students.length;i++){ let flag=0,per=0; j=i+1 %> 
+        <tr>
+          <td><%= j %> </td>
+          <td><%= students[i].firstName %> </td>
+          <td><p><%= students[i].lastName %> </p></td>
+          <% for(let k=0;k<students[i].marks.length;k++){ %> 
+            <% if(Number(students[i].marks[k])<54){ %>
+                <% flag=1;break ;%>
+            <% }else{ %>
+                <%per=Number(students[i].marks[k])+per %>
+            <% }} %> 
+            <% if(flag==1){ %> 
+                <td style="color:red">--</td>
+                <td style="color:red">Fail </td>
+            <%}else{ per=per/ students[i].marks.length%>
+                <td style="color:green"><%= per %> % </td>
+                <td style="color:green">Pass </td>
+            <% } %>     
+        </tr>
+        <% } %> 
+      </table>
+    </div>
+    </div>  
+</body>
+</html>
